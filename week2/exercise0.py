@@ -17,5 +17,7 @@ display(data.head(n=2))
 income_raw =data["income"]
 
 features_raw = data.drop("income",axis = 1)
+print(data.count())
 
-vs.distribution(data)
+
+# vs.distribution(data)
