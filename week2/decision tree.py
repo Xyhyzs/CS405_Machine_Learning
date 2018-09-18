@@ -46,7 +46,7 @@ class Tree:
         node, right_count = {}, None
         max_type = np.argmax(np.bincount(label))
         if len(np.unique(label)) == 1:
-            # 如果所有样本属于同一类C，则将结点标记为C
+              # 如果所有样本属于同一类C，则将结点标记为C
             node['type'] = label[0]
             return node
         if attr is None or len(np.unique(attr, axis=0)) == 1:
@@ -67,6 +67,7 @@ class Tree:
         # branch_attr_idx 表示用于划分的属性是属性集合中的第几个
         branch_attr_idx = np.where((attr_trans == best_attr).all(1))[0][0]
         if pre_pruning:
+
             sub_right_count = 0
             check_attr_trans = check_attr.transpose()
             # branch_attr_idx 表示本次划分依据的属性属于属性集中的哪一个
@@ -144,3 +145,5 @@ class Tree:
     # 以文本形式（类JSON）打印出决策树
     def print_tree(self):
         print(self.__root)
+
+
